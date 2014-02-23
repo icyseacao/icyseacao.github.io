@@ -26,25 +26,20 @@
         
         <div data-role="fieldcontain">
           <label for="name">Location:</label>
-          <textarea cols="20" rows="6" name="name" id="name"></textarea>
+          <textarea cols="20" rows="5" name="name" id="name"></textarea>
         </div>
 
        
         <div data-role="fieldcontain">
           <fieldset data-role="controlgroup">
-            <legend>Choose as many snacks as you'd like:</legend>
-            <input type="checkbox" name="checkbox-cheetos" id="checkbox-cheetos" class="custom" />
-            <label for="checkbox-cheetos">Cheetos</label>
+            <legend>Choose units as you'd like:</legend>
+            <input type="checkbox" name="checkbox-celsius" id="checkbox-celsius" class="custom" />
+            <label for="checkbox-celsius">Celsius</label>
 
-            <input type="checkbox" name="checkbox-doritos" id="checkbox-doritos" class="custom" />
-            <label for="checkbox-doritos">Doritos</label>
+            <input type="checkbox" name="checkbox-fahrenheit" id="checkbox-fahrenheit" class="custom" />
+            <label for="checkbox-fahrenheit">Fahrenheit</label>
 
-            <input type="checkbox" name="checkbox-fritos" id="checkbox-fritos" class="custom" />
-            <label for="checkbox-fritos">Fritos</label>
-
-            <input type="checkbox" name="checkbox-sunchips" id="checkbox-sunchips" class="custom" />
-            <label for="checkbox-sunchips">Sun Chips</label>
-            </fieldset>
+           </fieldset>
           </div>
         </div>
 
@@ -62,10 +57,8 @@
         var options = {
           'name': $("#name").val(),
           'special-feature': $("#special-feature").val(),
-          'checkbox-cheetos': $("#checkbox-cheetos").is(':checked'),
-          'checkbox-doritos': $("#checkbox-doritos").is(':checked'),
-          'checkbox-fritos': $("#checkbox-fritos").is(':checked'),
-          'checkbox-sunchips': $("#checkbox-sunchips").is(':checked')
+          'checkbox-celsius': $("#checkbox-celsius").is(':checked'),
+          'checkbox-fahrenheit': $("#checkbox-fahrenheit").is(':checked'),
         }
         return options;
       }
