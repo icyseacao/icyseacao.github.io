@@ -4,14 +4,14 @@
     <title>Configurable</title>
     <meta http-equiv="Content-Type" content="text/html; charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
   </head>
 
   <body>
     <div data-role="page" id="main">
-      <div data-role="header" data-position="fixed" class="jqm-header">
+      <div data-role="header" data-inset="true" data-position="fixed" class="jqm-header">
         <h1>Andriod-2.0 App</h1>
       </div>
 
@@ -26,26 +26,26 @@
         </div>
         
         <div data-role="fieldcontain">
-          <label for="name">Location:</label>
+          <label for="name">Location(City Name):</label>
           <textarea cols="20" rows="1" name="name" id="name"></textarea>
         </div>
 
        
         <div data-role="fieldcontain">
           <fieldset data-role="controlgroup">
-            <legend>Choose units:</legend>
-            <input type="checkbox" name="checkbox-celsius" id="checkbox-celsius" class="custom" />
-            <label for="checkbox-celsius">Celsius</label>
+            <legend>Choose temperature units:</legend>
+            <input type="radio" name="temp" id="celsius" value="celsiu" />
+            <label for="celsius">Celsius</label>
 
-            <input type="checkbox" name="checkbox-fahrenheit" id="checkbox-fahrenheit" class="custom" />
-            <label for="checkbox-fahrenheit">Fahrenheit</label>
+            <input type="radio" name="temp" id="fahrenheit" value="fahren" />
+            <label for="fahrenheit">Fahrenheit</label>
 
            </fieldset>
           </div>
         </div>
 
         <div class="ui-body ui-body-b">
-          <fieldset class="ui-grid-a">
+          <fieldset data-role="controlgroup">
               <div class="ui-block-a"><button type="submit" data-theme="d" id="b-cancel">Cancel</button></div>
               <div class="ui-block-b"><button type="submit" data-theme="a" id="b-submit">Submit</button></div>
             </fieldset>
@@ -56,10 +56,10 @@
     <script>
       function saveOptions() {
         var options = {
-          'name': $("#name").val(),
-          'special-feature': $("#special-feature").val(),
-          'checkbox-celsius': $("#checkbox-celsius").is(':checked'),
-          'checkbox-fahrenheit': $("#checkbox-fahrenheit").is(':checked'),
+           'gps': $("#gps").val(),
+           'name': $("#name").val(),
+           'temp': $("#celsius").val(),
+           'temp': $("#fahrenheit").val(),
         }
         return options;
       }
