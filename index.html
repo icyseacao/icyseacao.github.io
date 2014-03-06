@@ -12,7 +12,7 @@
   <body>
     <div data-role="page" id="main">
       <div data-role="header" data-theme="b" data-inset="true" data-position="fixed" class="jqm-header">
-        <a href="https://www.dragoninnovation.com">Link...</a>
+        <a href="https://www.dragoninnovation.com" data-transition="flip">Link</a>
         <h1>Andriod 2.0 Apps</h1>
       </div>
 
@@ -20,7 +20,7 @@
        
         <div data-role="fieldcontain">
           <label for="gps">GPS On/Off</label>
-          <select name="gps" id="gps" data-role="slider">
+          <select name="gps" id="gps" data-role="slider" data-theme="b">
             <option value="on">On</option>
             <option value="off">Off</option>
           </select>
@@ -60,9 +60,8 @@
         var options = {
            'gps': $("#gps").val(),
            'name': $("#name").val(),
-           'temp1': $("#celsius").is(':checked'),
-           'temp2': $("#fahrenheit").is(':checked'),
-                      }
+           'temp': $("#celsius").is(':checked'),
+                                 }
         return options;
       }
 
