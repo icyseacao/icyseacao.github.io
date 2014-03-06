@@ -12,6 +12,7 @@
   <body>
     <div data-role="page" id="main">
       <div data-role="header" data-theme="b" data-inset="true" data-position="fixed" class="jqm-header">
+        <a href="www.dragoninnovation.com">Link</a>
         <h1>Andriod-2.0 App</h1>
       </div>
 
@@ -47,7 +48,7 @@
         <div class="ui-body ui-body-d">
           <fieldset class="ui-grid-a">
               <div class="ui-block-a"><button type="submit" data-theme="c" id="b-cancel">Cancel</button></div>
-              <div class="ui-block-b"><button type="submit" data-theme="c" id="b-submit" checked="checked">Submit</button></div>
+              <div class="ui-block-b"><button type="submit" data-theme="b" id="b-submit">Submit</button></div>
             </fieldset>
           </div>
          
@@ -59,7 +60,8 @@
         var options = {
            'gps': $("#gps").val(),
            'name': $("#name").val(),
-           'temp': $("#temp").val(),
+           'temp1': $("#celsius").val(), 
+           'temp2': $("#fahrenheit").val(),
                       }
         return options;
       }
