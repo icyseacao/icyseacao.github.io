@@ -12,8 +12,8 @@
   <body>
     <div data-role="page" id="main">
       <div data-role="header" data-theme="b" data-inset="true" data-position="fixed" class="jqm-header">
-        <a href="www.dragoninnovation.com">Link</a>
-        <h1>Andriod-2.0 App</h1>
+        <a href="https://www.dragoninnovation.com">Link...</a>
+        <h1>Andriod 2.0 Apps</h1>
       </div>
 
       <div data-role="content">
@@ -60,8 +60,8 @@
         var options = {
            'gps': $("#gps").val(),
            'name': $("#name").val(),
-           'temp1': $("#celsius").val(), 
-           'temp2': $("#fahrenheit").val(),
+           'temp1': $("#celsius").is(':checked'),
+           'temp2': $("#fahrenheit").is(':checked'),
                       }
         return options;
       }
