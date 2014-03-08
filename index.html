@@ -16,8 +16,14 @@
                     
       </div>
 
-      <div data-role="content">
-        <div data-role="fieldcontain">
+      <div data-role="content">  
+       
+       <ul>         
+        <a href="https://www.dragoninnovation.com">  <img src="/img/di.png">
+        </a>
+       </ul>
+            
+       <div data-role="fieldcontain">
           <label for="gps">GPS On/Off</label>
           <select name="gps" id="gps" data-role="slider" data-highlight="true" data-track-theme="c">
             <option value="off">Off</option>
@@ -36,32 +42,18 @@
             <legend>Choose temperature units:</legend>
             <input type="radio" name="temp" id="celsius" value="celsiu" checked="checked" />
             <label for="celsius">Celsius</label>
-
             <input type="radio" name="temp" id="fahrenheit" value="fahren" />
             <label for="fahrenheit">Fahrenheit</label>
-
-           </fieldset>
+          </fieldset>
         </div>
-      </div>
-         
-     
-       
-          <div class="ui-body ui-body-d">
+      
+        <div class="ui-body ui-body-d">
             <fieldset class="ui-grid-a">
               <div class="ui-block-a"><button type="submit" data-theme="c" id="b-cancel">Cancel</button></div>
               <div class="ui-block-b"><button type="submit" data-theme="b" id="b-submit">Submit</button></div>
             </fieldset>
-          </div>
-        
-     
-
-      <div data-role="footer" data-theme="b">
-       <ul>         
-        <a href="https://www.dragoninnovation.com">  <img src="/img/di.png">
-        </a>
-       </ul>
-      </div>
-      
+        </div>
+      </div>       
     </div>
     <script>
       function saveOptions() {
