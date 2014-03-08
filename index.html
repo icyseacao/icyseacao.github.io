@@ -17,12 +17,7 @@
       </div>
 
       <div data-role="content">  
-       
-       <ul>         
-        <a href="https://www.dragoninnovation.com">  <img src="/img/di.png">
-        </a>
-       </ul>
-            
+                   
        <div data-role="fieldcontain">
           <label for="gps">GPS On/Off</label>
           <select name="gps" id="gps" data-role="slider" data-highlight="true" data-track-theme="c">
@@ -35,7 +30,6 @@
           <label for="name">Location(City Name):</label>
           <textarea cols="20" rows="1" name="name" id="name"></textarea>
         </div>
-
        
         <div data-role="fieldcontain">
           <fieldset data-role="controlgroup">
@@ -46,14 +40,23 @@
             <label for="fahrenheit">Fahrenheit</label>
           </fieldset>
         </div>
-      
-        <div class="ui-body ui-body-d">
+     
+        <div data-role="fieldcontain">
+          <div class="ui-body ui-body-d">
             <fieldset class="ui-grid-a">
               <div class="ui-block-a"><button type="submit" data-theme="c" id="b-cancel">Cancel</button></div>
               <div class="ui-block-b"><button type="submit" data-theme="b" id="b-submit">Submit</button></div>
             </fieldset>
+          </div>
         </div>
-      </div>       
+      </div> 
+
+       <ul>         
+        <a href="https://www.dragoninnovation.com">  <img src="/img/di.png">
+        </a>
+       </ul>
+
+      
     </div>
     <script>
       function saveOptions() {
