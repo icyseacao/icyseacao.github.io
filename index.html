@@ -85,7 +85,7 @@
         $("#b-cancel").click(function() {
           console.log("Cancel");
           document.location = "pebblejs://close";
-        });
+                                        });
 
         $("#b-submit").click(function() {
           console.log("Submit");
@@ -93,8 +93,8 @@
           console.log("Warping to: " + location);
          // console.log(location);
           document.location = location;
-        });  
-
+                                         });  
+        });
         $('#gps').val(getQueryVariable('gps1')).change();
         $('#name').val(getQueryVariable('name1')).change();
         if (getQueryVariable('unit1') == "celsius") {
@@ -106,9 +106,9 @@
         $('#name').prop('disabled', $('#gps').val() == "true");
        /* $('#gps').change(function() {
           $('#name').prop('disabled', $('#gps').val() == "true");
-        }); */
+                                      }); */
 
-      });
+      //});
     </script>
   </body>
 </html>
