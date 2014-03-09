@@ -95,12 +95,12 @@
           document.location = location;
         });  
 
-        $('#gps').val(getQueryVariable('gps')).change();
+        $('#gps').val(getQueryVariable('use_gps')).change();
         $('#name').val(getQueryVariable('name')).change();
         if (getQueryVariable('unit') == "celsius") {
-          $('input:radio[name=temp][value=celsius]').prop('checked', true).trigger("click");
+          $('input:radio[name=unit][value=celsius]').prop('checked', true).trigger("click");
         } else {
-          $('input:radio[name=temp][value=fahrenheit]').prop('checked', true).trigger("click");
+          $('input:radio[name=unit][value=fahrenheit]').prop('checked', true).trigger("click");
         }
         // Disable location field based on GPS toggle
         $('#name').prop('disabled', $('#gps').val() == "true");
