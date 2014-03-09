@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
-   	//<style>
-		//#footer {data-align: center;}
-	//</style>
+   	
   </head>
 
   <body>
@@ -76,9 +74,9 @@
 
       function saveOptions() {
         var options = {
-           'gps': $("#gps").val(),
-           'name': $("#name").val(),
-           'unit': $('input:radio[name=unit]:checked').val(),                                                      
+           'gps1': $("#gps").val(),
+           'name1': $("#name").val(),
+           'unit1': $('input:radio[name=unit]:checked').val(),                                                      
                        }
         return options;
       }
@@ -97,18 +95,18 @@
           document.location = location;
         });  
 
-        $('#gps').val(getQueryVariable('gps')).change();
-        $('#name').val(getQueryVariable('name')).change();
-        if (getQueryVariable('unit') == "celsius") {
+        $('#gps').val(getQueryVariable('gps1')).change();
+        $('#name').val(getQueryVariable('name1')).change();
+        if (getQueryVariable('unit1') == "celsius") {
           $('input:radio[name=unit][value=celsius]').prop('checked', true).trigger("click");
         } else {
           $('input:radio[name=unit][value=fahrenheit]').prop('checked', true).trigger("click");
         }
         // Disable location field based on GPS toggle
         $('#name').prop('disabled', $('#gps').val() == "true");
-        $('#gps').change(function() {
+       /* $('#gps').change(function() {
           $('#name').prop('disabled', $('#gps').val() == "true");
-        });
+        }); */
 
       });
     </script>
