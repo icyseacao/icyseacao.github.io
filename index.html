@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
-    
+    <style>
+      .ui-header .ui-title { margin-left: 1em; margin-right: 1em; text-overflow: clip; }
+      /*.ui-radio { width: 50%; }*/
+    </style>
   </head>
 
   <body>
@@ -21,8 +24,8 @@
        <div data-role="fieldcontain">
           <label for="gps">GPS On/Off</label>
           <select name="gps" id="gps" data-role="slider" data-highlight="true" data-track-theme="d">
-            <option value="off">Off</option>
-            <option value="on" selected>On</option>
+            <option value="false">Off</option>
+            <option value="true">On</option>
           </select>
         </div>
         
@@ -34,9 +37,9 @@
         <div data-role="fieldcontain">
           <fieldset data-role="controlgroup">
             <legend>Choose temperature units:</legend>
-            <input type="radio" name="temp" id="celsius" value="celsius" checked="checked"/>
+            <input type="radio" name="unit" id="celsius" value="celsius"/>
             <label for="celsius">Celsius</label>
-            <input type="radio" name="temp" id="fahrenheit" value="fahrenheit"/>
+            <input type="radio" name="unit" id="fahrenheit" value="fahrenheit"/>
             <label for="fahrenheit">Fahrenheit</label>
           </fieldset>
         </div>
@@ -73,7 +76,7 @@
         var options = {
            'gps': $("#gps").val(),
            'name': $("#name").val(),
-           'unit': $('input:radio[name=temp]:checked').val(),                                                      
+           'unit': $('input:radio[name=unit]:checked').val(),                                                      
                        }
         return options;
       }
@@ -86,24 +89,23 @@
 
         $("#b-submit").click(function() {
           console.log("Submit");
-
           var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
           console.log("Warping to: " + location);
-          console.log(location);
+         // console.log(location);
           document.location = location;
         });  
 
         $('#gps').val(getQueryVariable('gps')).change();
         $('#name').val(getQueryVariable('name')).change();
-        if (val(getQueryVariable('temp')) == "celsius") {
+        if (getQueryVariable('unit') == "celsius") {
           $('input:radio[name=temp][value=celsius]').prop('checked', true).trigger("click");
         } else {
           $('input:radio[name=temp][value=fahrenheit]').prop('checked', true).trigger("click");
         }
         // Disable location field based on GPS toggle
-        $('#gps').prop('disabled', $('#gps').val() == "true");
+        $('#name').prop('disabled', $('#gps').val() == "true");
         $('#gps').change(function() {
-          $('#gps').prop('disabled', $('#gps').val() == "true");
+          $('#name').prop('disabled', $('#gps').val() == "true");
         });
 
       });
