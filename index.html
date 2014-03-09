@@ -29,7 +29,7 @@
        <div data-role="fieldcontain">
           <label for="gps">GPS On/Off</label>
           <select name="gps" id="gps" data-role="slider" data-highlight="true" data-track-theme="c">
-            <option value="off">Off</option>
+            <option value="off" data-track-theme="e">Off</option>
             <option value="on" selected>On</option>
           </select>
         </div>
@@ -42,22 +42,21 @@
         <div data-role="fieldcontain">
           <fieldset data-role="controlgroup">
             <legend>Choose temperature units:</legend>
-            <input type="radio" name="temp" id="celsius" value="celsiu" checked="checked" />
+            <input type="radio" name="temp" id="celsius" value="celsiu" checked="checked"/>
             <label for="celsius">Celsius</label>
-            <input type="radio" name="temp" id="fahrenheit" value="fahren" />
+            <input type="radio" name="temp" id="fahrenheit" value="fahren" data-icon-theme="e"/>
             <label for="fahrenheit">Fahrenheit</label>
           </fieldset>
         </div>
-      
-        <div data-role="fieldcontain">
-          <div class="ui-body ui-body-c">
+      </div>      
+      <div class="ui-body ui-body-c">
             <fieldset class="ui-grid-a">
               <div class="ui-block-a"><button type="submit" data-theme="e" id="b-cancel">Cancel</button></div>
               <div class="ui-block-b"><button type="submit" data-theme="b" id="b-submit">Submit</button></div>
             </fieldset>
-          </div>
-        </div>
-      </div>      
+      </div>
+       
+     
       <div data-role="footer" data-position="fixed">
         <ul>       
         <a href="https://www.dragoninnovation.com"> <img src="/img/di.png">
