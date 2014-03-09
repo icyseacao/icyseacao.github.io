@@ -19,11 +19,10 @@
         $('#page-1').click(); 
                  });
 
-   $(document).on('pagebeforecreate',function(event){ 
-      $.extend($.mobile, {
-        ajaxEnabled: true,
-                         });
-                                                  }); 
+   $(document).on('pagebeforeload',function(event, data){
+      event.preventDefault();
+      data.deferred.resolve( data.absUrl, data.options, page );
+                                                       }); 
    $(document).on('pagecreate',function(event){ 
                  });
     </script>
