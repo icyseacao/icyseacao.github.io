@@ -8,17 +8,6 @@
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
     <script> 
-    $(document).on('mobileinit', function(){
-    $.event.special.swipe.horizontalDistanceThreshold = 50; 
-                                             });
-    $(function(){
-    $("#footer1").on('swipeleft', function() {
-        $('#page-1').click();
-    });
-    $("#footer-1").on('swiperight', function() {
-        $('#page-1').click(); 
-                 });
-
    $(document).on('pagebeforeload',function(event, data){
       event.preventDefault();
       data.deferred.resolve( data.absUrl, data.options, page );
