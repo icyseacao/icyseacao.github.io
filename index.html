@@ -12,8 +12,8 @@
 
   <body>
     <div data-role="page" id="main">
-      <div data-role="header" data-theme="b" data-inset="true" data-position="fixed">
-        <h1>Andriod Watchface</h1> 
+      <div data-role="header" class='jqm-header' data-theme="b" data-position="fixed">
+        <h1>Andriod Watchface 2.0</h1> 
       </div>
 
       <div data-role="content">  
@@ -58,9 +58,9 @@
         </a>
         </ul>
       </div>
-           
     </div>
-    <script>
+    
+  <script>
     function getQueryVariable(variable) {
         var query = location.search.substring(1);
         var vars = query.split('&');
@@ -74,9 +74,9 @@
 
       function saveOptions() {
         var options = {
-           'gps1': $("#gps").val(),
-           'name1': $("#name").val(),
-           'unit1': $('input:radio[name=unit]:checked').val(),                                                      
+           'gps': $("#gps").val(),
+           'name': $("#name").val(),
+           'unit': $('input:radio[name=unit]:checked').val(),                                                      
                        }
         return options;
       }
@@ -89,26 +89,26 @@
 
         $("#b-submit").click(function() {
           console.log("Submit");
-          var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
-          console.log("Warping to: " + location);
+          document.location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
+         // console.log("Warping to: " + location);
          // console.log(location);
-          document.location = location;
+         // document.location = location;
                                          });  
-        });
-        $('#gps').val(getQueryVariable('gps1')).change();
-        $('#name').val(getQueryVariable('name1')).change();
-        if (getQueryVariable('unit1') == "celsius") {
+       
+        $('#gps').val(getQueryVariable('gps')).change();
+        $('#name').val(getQueryVariable('name')).change();
+        if (getQueryVariable('unit') == "celsius") {
           $('input:radio[name=unit][value=celsius]').prop('checked', true).trigger("click");
         } else {
           $('input:radio[name=unit][value=fahrenheit]').prop('checked', true).trigger("click");
         }
         // Disable location field based on GPS toggle
         $('#name').prop('disabled', $('#gps').val() == "true");
-       /* $('#gps').change(function() {
+        $('#gps').change(function() {
           $('#name').prop('disabled', $('#gps').val() == "true");
-                                      }); */
+                                      });
 
-      //});
+      });
     </script>
   </body>
 </html>
