@@ -8,6 +8,17 @@
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
     <script> 
+    $(document).bind('mobileinit', function(){
+    $.event.special.swipe.horizontalDistanceThreshold = 30; 
+                                             });
+    $(function(){
+    $("#page-1").live('swipeleft', function() {
+        $('https://www.dragoninnovation.com').click();
+    });
+    $("#page-1").live('swiperight', function() {
+        $('#page-1').click(); 
+                 });
+
    $(document).on('pagebeforecreate',function(event){ 
       $.extend($.mobile, {
         ajaxEnabled: true,
@@ -59,7 +70,7 @@
      
       <div data-role="footer" data-position="fixed">
         <ul>       
-        <a href="https://www.dragoninnovation.com"> <img src="/img/di.png">
+        <a id="page-1" href="https://www.dragoninnovation.com"> <img src="/img/di.png">
         </a>
         </ul>
       </div>
