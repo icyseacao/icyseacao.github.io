@@ -94,8 +94,8 @@
         });  
 
         $('#gps').val(getQueryVariable('gps')).change();
-        $('#name').val(getQueryVariable('name'));
-        if (getQueryVariable('temp') == "celsius") {
+        $('#name').val(getQueryVariable('name')).change();
+        if (val(getQueryVariable('temp')) == "celsius") {
           $('input:radio[name=temp][value=celsius]').prop('checked', true).trigger("click");
         } else {
           $('input:radio[name=temp][value=fahrenheit]').prop('checked', true).trigger("click");
